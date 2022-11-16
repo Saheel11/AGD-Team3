@@ -10,6 +10,8 @@ public class Hook : MonoBehaviour
     private Vector3 hookShotPos;
     [SerializeField] private bool traveling;
 
+    public float hookRange;
+
     public GameObject debugCube;
     public LineRenderer lineRenderer;
 
@@ -29,7 +31,7 @@ public class Hook : MonoBehaviour
             traveling = false;
         }
         
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Input.GetMouseButtonDown(0))
         {
             ShootHook();
         }
@@ -50,7 +52,7 @@ public class Hook : MonoBehaviour
 
     void ShootHook()
     {
-        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit))
+        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, hookRange))
         {
             
             if(hit.transform.tag == "hookable")
