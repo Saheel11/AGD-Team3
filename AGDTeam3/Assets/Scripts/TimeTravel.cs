@@ -18,7 +18,7 @@ public class TimeTravel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if(Input.GetMouseButtonDown(1))
         {
             Debug.Log("pressed");
             i++;
