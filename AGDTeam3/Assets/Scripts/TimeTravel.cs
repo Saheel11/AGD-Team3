@@ -5,34 +5,40 @@ using UnityEngine;
 public class TimeTravel : MonoBehaviour
 {
 
-    [SerializeField] private GameObject world_present;
-    [SerializeField] private GameObject world_past;
+    public GameObject world_present;
+    public GameObject world_past;
+    [SerializeField] private GameObject playerCanvas;
+
+    public bool canTravel;
+
     private float i = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        world_past.SetActive(false);
+        world_present.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && canTravel)
         {
             Debug.Log("pressed");
             i++;
             if (i%2 == 0)  
             {  
+                playerCanvas.GetComponent<Animator>().SetTrigger("past");
                 Debug.Log("past");
-                world_past.SetActive(false);
-                world_present.SetActive(true);
+                //world_past.SetActive(false);
+                //world_present.SetActive(true);
             }  
             else  
             {  
+                playerCanvas.GetComponent<Animator>().SetTrigger("present");
                 Debug.Log("present");
-                world_past.SetActive(true);
-                world_present.SetActive(false);
+                //world_past.SetActive(true);
+                //world_present.SetActive(false);
             }  
         }
     }
