@@ -67,6 +67,11 @@ public class Hook : MonoBehaviour
                 idleCrosshair.SetActive(true);
             }
         }
+        else
+        {
+            activeCrosshair.SetActive(false);
+            idleCrosshair.SetActive(true);
+        }
 
 
     }
