@@ -15,6 +15,9 @@ public class Hook : MonoBehaviour
     public GameObject debugCube;
     public LineRenderer lineRenderer;
 
+    [SerializeField] private GameObject activeCrosshair;
+    [SerializeField] private GameObject idleCrosshair;
+
 
     void Update()
     {
@@ -48,6 +51,24 @@ public class Hook : MonoBehaviour
         {
             this.GetComponent<EmmyFPSController>().gravityOn = true;
         }
+
+
+        //crosshair update
+        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, hookRange))
+        {
+            if(hit.transform.tag == "hookable")
+            {
+                activeCrosshair.SetActive(true);
+                idleCrosshair.SetActive(false);
+            }
+            else
+            {
+                activeCrosshair.SetActive(false);
+                idleCrosshair.SetActive(true);
+            }
+        }
+
+
     }
 
     void ShootHook()
