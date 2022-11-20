@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 7957213842725692836}
   - component: {fileID: 7957213842725692837}
   m_Layer: 5
-  m_Name: x
+  m_Name: activeCrosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,6 +1774,8 @@ MonoBehaviour:
   hookRange: 20
   debugCube: {fileID: 0}
   lineRenderer: {fileID: 7957213843571720673}
+  activeCrosshair: {fileID: 7957213842725692839}
+  idleCrosshair: {fileID: 317290918}
 --- !u!120 &7957213843571720673
 LineRenderer:
   m_ObjectHideFlags: 0
