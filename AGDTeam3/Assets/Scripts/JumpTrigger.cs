@@ -3,20 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeTravelTrigger : MonoBehaviour
+public class JumpTrigger : MonoBehaviour
 {
-    public Canvas _canvasTravel;
+    public Canvas _canvasJump;
     public TimeTravel _timeTravel;
 
     private void Start()
     {
-        _canvasTravel.enabled = false;
+        _canvasJump.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Travel active");
-        _timeTravel.canTravel = true;
-        _canvasTravel.enabled = true;
+        _canvasJump.enabled = true;
     }
 }

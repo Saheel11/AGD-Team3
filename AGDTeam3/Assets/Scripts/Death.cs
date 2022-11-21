@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
     public Hook _hook;
     public ReTime _reTime;
     public bool isWaitingForRewind = false;
-    public Animator animator;
+    public Animator canvasDeath;
     [SerializeField] private CharacterController controller;
 
 
@@ -18,8 +18,7 @@ public class Death : MonoBehaviour
     //private Transform playerTransform;
 
     public float verticalSpeed;
-    public float waitingTimeForDead = 1f;
-    [SerializeField] private float maxSpeedToDie = -10;
+    [SerializeField] private float maxSpeedToDie = -20;
 
 
     private void Start()
@@ -53,7 +52,7 @@ public class Death : MonoBehaviour
     {
             Debug.Log("you died");
             isDead = true;
-            animator.SetBool("IsDead", true);
+            canvasDeath.SetBool("IsDead", true);
             Invoke("ReadyForRewind",.2f);
     }
 
@@ -72,7 +71,7 @@ public class Death : MonoBehaviour
             Debug.Log("KeyCodeE");
 
             _reTime.StartTimeRewind();
-            animator.SetBool("IsDead", false);
+            canvasDeath.SetBool("IsDead", false);
             isDead = false;
             _reTime.StartFeeding();
             _hook.enabled = false;
