@@ -8,13 +8,21 @@ public class Hook : MonoBehaviour
     [SerializeField] private Camera playerCam;
     [SerializeField] private CharacterController controller;
     private Vector3 hookShotPos;
-    [SerializeField] private bool traveling;
+    private bool traveling;
+    private bool casting;
+    [SerializeField] private float castingSpeed;
 
     public float hookRange;
 
     public GameObject debugCube;
     public LineRenderer lineRenderer;
+    
+    private float timer;
 
+    [SerializeField] private GameObject activeCrosshair;
+    [SerializeField] private GameObject idleCrosshair;
+
+    [SerializeField] private Transform hookStart;
 
     void Update()
     {
@@ -25,11 +33,18 @@ public class Hook : MonoBehaviour
             HookShotMove();
             
         }
+        else if(casting)
+        {
+            lineRenderer.enabled = true;
+            HookShotCast();    
+        }
         else
         {
             lineRenderer.enabled = false;
             traveling = false;
         }
+
+        
         
         if(Input.GetMouseButtonDown(0))
         {
@@ -48,6 +63,29 @@ public class Hook : MonoBehaviour
         {
             this.GetComponent<EmmyFPSController>().gravityOn = true;
         }
+
+
+        //crosshair update
+        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, hookRange))
+        {
+            if(hit.transform.tag == "hookable")
+            {
+                activeCrosshair.SetActive(true);
+                idleCrosshair.SetActive(false);
+            }
+            else
+            {
+                activeCrosshair.SetActive(false);
+                idleCrosshair.SetActive(true);
+            }
+        }
+        else
+        {
+            activeCrosshair.SetActive(false);
+            idleCrosshair.SetActive(true);
+        }
+
+
     }
 
     void ShootHook()
@@ -57,20 +95,42 @@ public class Hook : MonoBehaviour
             
             if(hit.transform.tag == "hookable")
             {
-                traveling = true;
+                timer = 0f;
+                lineRenderer.SetPosition(1, hookStart.position);
+                //traveling = true;
+                casting = true;
                 hookShotPos = hit.point;
             }
             
             
         }
     }
+    void HookShotCast()
+    {
+        
+        traveling = false;
+        timer += Time.deltaTime * castingSpeed;
+
+
+        lineRenderer.SetPosition(0, hookStart.position);
+        lineRenderer.SetPosition(1, Vector3.Lerp(hookStart.position, hookShotPos, Mathf.Clamp(timer, 0, 1f)));
+
+        if(timer > 1f)
+        {
+            timer = 0f;
+            casting = false;
+            traveling = true;
+        }
+    }
+
+
     void HookShotMove()
     {
 
         this.GetComponent<EmmyFPSController>().gravityOn = false;
         
 
-        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(0, hookStart.position);
         lineRenderer.SetPosition(1, hookShotPos);
 
         float maxSpeed = 30f;
