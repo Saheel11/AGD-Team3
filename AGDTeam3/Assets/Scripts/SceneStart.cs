@@ -28,9 +28,5 @@ public class SceneStart : MonoBehaviour
     {
         audioMusic.volume += Time.deltaTime / secondsToFadeOut;
 
-        // if (musicFadeIn)
-        // {
-        //     audioMusic.volume += Time.deltaTime / secondsToFadeOut;
-        // }
     }
 }

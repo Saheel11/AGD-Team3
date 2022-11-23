@@ -2497,7 +2497,7 @@ MonoBehaviour:
   controller: {fileID: 7957213843571720676}
   isDead: 0
   verticalSpeed: 0
-  maxSpeedToDie: -50
+  maxSpeedToDie: -25
 --- !u!114 &4840022754356680966
 MonoBehaviour:
   m_ObjectHideFlags: 0
