@@ -6,7 +6,6 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour
 {
     public Canvas _canvasJump;
-    public TimeTravel _timeTravel;
 
     private void Start()
     {

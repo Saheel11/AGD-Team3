@@ -1621,11 +1621,11 @@ MonoBehaviour:
   walkingSpeed: 7.5
   sneakingSpeed: 10.03
   runningSpeed: 11.5
-  jumpSpeed: 8
+  jumpSpeed: 5
   gravity: 20
   playerCamera: {fileID: 7957213843095346833}
   lookSpeed: 2
-  lookXLimit: 65
+  lookXLimit: 85
   sneakHeight: 1
   _playerMesh: {fileID: 7957213842971511363}
   gravityOn: 1
@@ -1764,11 +1764,10 @@ MonoBehaviour:
   _hook: {fileID: 7957213843571720674}
   _reTime: {fileID: 4840022754356680966}
   isWaitingForRewind: 0
-  canvasDeath: {fileID: 0}
-  controller: {fileID: 0}
+  canvasDeath: {fileID: 3553982429965727103}
+  controller: {fileID: 7957213843571720676}
   isDead: 0
   verticalSpeed: 0
-  waitingTimeForDead: 1
   maxSpeedToDie: -20
 --- !u!114 &4840022754356680966
 MonoBehaviour:
