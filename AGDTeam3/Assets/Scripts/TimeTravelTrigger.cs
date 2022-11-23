@@ -5,18 +5,15 @@ using UnityEngine;
 
 public class TimeTravelTrigger : MonoBehaviour
 {
-    public Canvas _canvasTravel;
     public TimeTravel _timeTravel;
 
     private void Start()
     {
-        _canvasTravel.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Travel active");
         _timeTravel.canTravel = true;
-        _canvasTravel.enabled = true;
     }
 }
