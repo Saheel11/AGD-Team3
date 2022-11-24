@@ -19,7 +19,7 @@ public class Hook : MonoBehaviour
     [SerializeField] private float distanceHookPlayer = 2f;
 
     [Header("Hook audio")] 
-    [SerializeField] AudioSource _audioSourcePull;
+    [SerializeField] AudioSource _audioSourceDrag;
     [SerializeField] AudioSource _audioSourceHit;
     [SerializeField] private AudioClip sfxHookPull;
     [SerializeField] private AudioClip sfxHookHit;
@@ -41,7 +41,7 @@ public class Hook : MonoBehaviour
 
     private void Awake()
     {
-        _audioSourcePull = GetComponent<AudioSource>();
+        _audioSourceDrag = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -118,7 +118,7 @@ public class Hook : MonoBehaviour
                 //Activate blur postprocess
                 blurHookAnimator.SetBool("hookBlur", true);
                 
-                _audioSourcePull.PlayOneShot(sfxHookPull); 
+                _audioSourceDrag.PlayOneShot(sfxHookPull); 
                 _audioSourceHit.PlayOneShot(sfxHookHit); 
             }
         }
@@ -163,7 +163,7 @@ public class Hook : MonoBehaviour
             Debug.Log("HookEnded");
             blurHookAnimator.SetBool("hookBlur", false);
             
-            _audioSourcePull.Stop();
+            _audioSourceDrag.Stop();
         }
 
     }

@@ -53,7 +53,7 @@ public class Death : MonoBehaviour
             Debug.Log("you died");
             isDead = true;
             canvasDeath.SetBool("IsDead", true);
-            Invoke("ReadyForRewind",.2f);
+            Invoke("ReadyForRewind",.01f);
     }
 
     private void ReadyForRewind()

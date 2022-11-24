@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TriggerMusicPreExit : MonoBehaviour
 {
-    public  AudioSource audiosource_mainSong;
+    public  AudioSource audiosource_mainSong_present;
+    public  AudioSource audiosource_mainSong_past;
 
     public  float secondsToFadeOut = 3f;
     public bool musicFadeOut = false;
@@ -21,7 +22,8 @@ public class TriggerMusicPreExit : MonoBehaviour
     {
         if (musicFadeOut)
         {
-            audiosource_mainSong.volume -= Time.deltaTime / secondsToFadeOut;    
+            audiosource_mainSong_present.volume -= Time.deltaTime / secondsToFadeOut;    
+            audiosource_mainSong_past.volume -= Time.deltaTime / secondsToFadeOut;    
         }
     }
 
