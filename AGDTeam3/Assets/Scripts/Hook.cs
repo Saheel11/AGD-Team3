@@ -41,7 +41,6 @@ public class Hook : MonoBehaviour
 
     private void Awake()
     {
-        _audioSourceDrag = GetComponent<AudioSource>();
     }
 
     void Update()
