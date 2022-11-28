@@ -2591,7 +2591,7 @@ MonoBehaviour:
   sfxHookPull: {fileID: 8300000, guid: be88c37595498f345a61a500ae35ed0e, type: 3}
   sfxHookHit: {fileID: 8300000, guid: 4a3076fcf08acef408fb780ea4cafa9e, type: 3}
   hookRange: 20
-  debugCube: {fileID: 282977855}
+  debugCube: {fileID: 0}
   lineRenderer: {fileID: 7957213843571720673}
   activeCrosshair: {fileID: 7957213842725692839}
   idleCrosshair: {fileID: 317290918}

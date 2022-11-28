@@ -10,4 +10,9 @@ public class DeathTrigger : MonoBehaviour
         Debug.Log("you died");
         _death.Dead();
     }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("you died");
+        _death.Dead();
+    }
 }
