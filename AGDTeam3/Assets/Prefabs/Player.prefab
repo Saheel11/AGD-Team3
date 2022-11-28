@@ -2584,14 +2584,14 @@ MonoBehaviour:
   controller: {fileID: 7957213843571720676}
   hookShotPos: {x: 0, y: 0, z: 0}
   castingSpeed: 4
-  blurHookAnimator: {fileID: 0}
+  blurHookAnimator: {fileID: 1846054538}
   distanceHookPlayer: 2
   _audioSourceDrag: {fileID: 3922683917942320186}
   _audioSourceHit: {fileID: 1487911984}
   sfxHookPull: {fileID: 8300000, guid: be88c37595498f345a61a500ae35ed0e, type: 3}
   sfxHookHit: {fileID: 8300000, guid: 4a3076fcf08acef408fb780ea4cafa9e, type: 3}
   hookRange: 20
-  debugCube: {fileID: 0}
+  debugCube: {fileID: 282977855}
   lineRenderer: {fileID: 7957213843571720673}
   activeCrosshair: {fileID: 7957213842725692839}
   idleCrosshair: {fileID: 317290918}
@@ -3448,6 +3448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34c345bc2bc07854aaef555f2854e9f0, type: 3}
+--- !u!95 &1846054538 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 664285572, guid: 34c345bc2bc07854aaef555f2854e9f0, type: 3}
+  m_PrefabInstance: {fileID: 1234222862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7913667063568466338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7913667064783814316, guid: 34c345bc2bc07854aaef555f2854e9f0, type: 3}
