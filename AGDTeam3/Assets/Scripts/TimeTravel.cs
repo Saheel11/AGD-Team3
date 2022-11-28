@@ -8,6 +8,10 @@ public class TimeTravel : MonoBehaviour
 {
     public AudioSource pastMusic;
     public AudioSource presentMusic;
+    [SerializeField] AudioSource timeTravelSFX;
+    [SerializeField] private AudioClip timeTravel;
+
+
     public PostProcessLayer _layer;
     
     public GameObject world_present;
@@ -55,9 +59,11 @@ public class TimeTravel : MonoBehaviour
                 
                 RenderSettings.skybox=SkyPresent;
                 RenderSettings.fogDensity = fogPresent;
+                timeTravelSFX.PlayOneShot(timeTravel);
 
                 presentMusic.mute = false;
                 pastMusic.mute = true;
+                
 
 
 
@@ -72,6 +78,7 @@ public class TimeTravel : MonoBehaviour
                 _layer.volumeLayer = LayerMask.GetMask("PP_Past");
                 RenderSettings.fogDensity = fogPast;
 
+                timeTravelSFX.PlayOneShot(timeTravel);
                 presentMusic.mute = true;
                 pastMusic.mute = false;
                 
