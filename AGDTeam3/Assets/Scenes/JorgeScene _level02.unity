@@ -813,11 +813,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!82 &14359552 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1319440161, guid: 68843ed8df6b38d4783cf835f998f18e, type: 3}
-  m_PrefabInstance: {fileID: 1276170541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &15128691
 GameObject:
   m_ObjectHideFlags: 0
@@ -6044,7 +6039,7 @@ PrefabInstance:
     - target: {fileID: 624786905, guid: 6d099ae41f06cc6489becb285670dec9, type: 3}
       propertyPath: audiosource_mainSong
       value: 
-      objectReference: {fileID: 14359552}
+      objectReference: {fileID: 0}
     - target: {fileID: 4181070052640530401, guid: 6d099ae41f06cc6489becb285670dec9, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -6192,7 +6187,7 @@ PrefabInstance:
     - target: {fileID: 4181070053696030748, guid: 6d099ae41f06cc6489becb285670dec9, type: 3}
       propertyPath: _fadeScene
       value: 
-      objectReference: {fileID: 1431001752}
+      objectReference: {fileID: 0}
     - target: {fileID: 4181070053696030748, guid: 6d099ae41f06cc6489becb285670dec9, type: 3}
       propertyPath: audiosource_ExitClip
       value: 
@@ -10626,6 +10621,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &353125702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061815459817553661, guid: 68843ed8df6b38d4783cf835f998f18e, type: 3}
+  m_PrefabInstance: {fileID: 1276170541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56c384018cdb984a8bb956c2db8d24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &353262048
 Mesh:
   m_ObjectHideFlags: 0
@@ -15414,7 +15420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56c384018cdb984a8bb956c2db8d24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMusic: {fileID: 14359552}
+  audioMusic: {fileID: 1276170543}
   secondsToFadeOut: 3
   _canvasStart: {fileID: 1221280765}
 --- !u!1 &503240873
@@ -18430,7 +18436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0c4f6a4f0873b4a947c2f7547ad78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasTravel: {fileID: 375025299}
   _timeTravel: {fileID: 2101251088}
 --- !u!1 &618615795
 GameObject:
@@ -32385,6 +32390,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 673129191009552207, guid: 68843ed8df6b38d4783cf835f998f18e, type: 3}
   m_PrefabInstance: {fileID: 1276170541}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1276170543 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2067850761822182223, guid: 68843ed8df6b38d4783cf835f998f18e, type: 3}
+  m_PrefabInstance: {fileID: 1276170541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1278678739
 GameObject:
   m_ObjectHideFlags: 0
@@ -36475,17 +36485,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fded1c59e7ee61f4597512387b6ace26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1431001752 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7229261807888159423, guid: 68843ed8df6b38d4783cf835f998f18e, type: 3}
-  m_PrefabInstance: {fileID: 1276170541}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431001736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56c384018cdb984a8bb956c2db8d24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1434643341
@@ -42006,11 +42005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178199d036d16f14bb81193fb69f95e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource_ExitClip: {fileID: 0}
-  exitClip: {fileID: 0}
+  audiosource_ExitClip: {fileID: 1276170542}
+  exitClip: {fileID: 8300000, guid: 004f61c1f8434464391c1cd6fdfeda1c, type: 3}
   secondsToFadeOut: 3
   musicFadeOut: 0
-  _fadeScene: {fileID: 0}
+  _fadeScene: {fileID: 353125702}
 --- !u!65 &1721734857
 BoxCollider:
   m_ObjectHideFlags: 0
