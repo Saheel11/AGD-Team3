@@ -19,6 +19,18 @@ public class Oscillator : MonoBehaviour
  
     private void Update() 
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            player.transform.parent = null;
+        }
+
+
+
+
+        //world_past.SetActive(false);
+                //world_present.SetActive(true);
+        
+        
     if (period <= Mathf.Epsilon) {return;}     // To avoid number 0 or close to 0. Epsilon is a tiny number
 
     float cycles = Time.time / period;  // Continuous rolling over time 
